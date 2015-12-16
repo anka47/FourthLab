@@ -30,6 +30,9 @@ public class NumberValidator implements Validator {
             if ((1e-100 > Math.abs(number))&& number != 0) {
                 showException("\nСлишком маленькое число   ");
             }
+            if (number == Double.NaN) {
+                showException("\nВведен NaN :(  ");
+            }
         } catch (NumberFormatException e) {
             showException("\nОбработка неосуществима, введите число   ");
         }

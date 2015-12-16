@@ -13,9 +13,9 @@ import javax.faces.convert.ConverterException;
 public class NumberConverter implements Converter {
     @Override
     public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String s) {
-//        if (s == null || (s.trim().length() == 0)) {
-//            showException("Введите число");
-//        }
+        if (s == null || (s.trim().length() == 0) || s.contains("NaN")) {
+            showException("Введите число");
+        }
         double number = -1;
         if(s != null || !(s.trim().length() == 0)) {
             try {

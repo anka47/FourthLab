@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
 public class ActionImplMyMethod implements Action {
     @Override
     public double multiply(double firstNumber, double secondNumber) {
-        
+
         return firstNumber*secondNumber;
     }
 }
