@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Web Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<h:form id="MyForm">
+    <h1>Web Application</h1>
+
+    <p>
+        Умножение двух чисел
+    </p>
+
+    <p>
+        <label for="firstNumber">Первое число</label>
+        <h:inputText id="firstNumber" title="Введите число" required="true" value="#{actionBean.firstNumber}"
+                     requiredMessage="Введите число">
+            <f:converter converterId="converter.NumberConverter"/>
+            <f:validator validatorId="validator.NumberValidator"/>
+        </h:inputText>
+    </p>
+    <p>
+        <label for="secondNumber">Второе число</label>
+        <h:inputText id="secondNumber" title="Введите число" required="true" value="#{actionBean.secondNumber}"
+                     requiredMessage="Введите число">
+            <f:converter converterId="converter.NumberConverter"/>
+            <f:validator validatorId="validator.NumberValidator"/>
+        </h:inputText>
+    </p>
+    <p>
+        <h:commandButton action="res" value="Подтвердить"/>
+    </p>
+    <h:message for="firstNumber" errorClass="exceptionForm"/>
+    <h:message for="secondNumber" errorClass="exceptionForm"/>
+</h:form>
+</html>

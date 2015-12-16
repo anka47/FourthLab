@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Web Application</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<h:form>
+    <h1>Web Application</h1>
+
+    <p>
+        Умножение двух чисел
+    </p>
+
+    <p>
+        <label for="firstNumber">Певое число: </label>
+        <h:outputText id="firstNumber" value="#{actionBean.firstNumber}"/>
+    </p>
+
+    <p>
+        <label for="secondNumber">Второе число: </label>
+        <h:outputText id="secondNumber" value="#{actionBean.secondNumber}"/>
+    </p>
+
+    <p>
+        <label for="result">Результат: </label>
+        <h:outputText id="result" value="#{actionBean.multiply()}"/>
+    </p>
+
+    <p>
+        <h:outputLink id="backToHome" value="index.xhtml">Возврат на исходную страницу</h:outputLink>
+    </p>
+     <p>
+    <h:outputLink id="xml" value="result.xml">Скачать результат</h:outputLink>
+</p>
+</h:form>
+</html>
